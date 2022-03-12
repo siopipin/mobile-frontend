@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/profile/profile_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,6 +46,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProfileScreen()));
+                },
+                child: const Text('Profile')),
             Image.network(
               'https://purepng.com/public/uploads/large/purepng.com-mariomariofictional-charactervideo-gamefranchisenintendodesigner-1701528634653vywuz.png',
               width: 200,
@@ -80,6 +89,21 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            Center(
+              child: Container(
+                height: 100.0,
+                width: 100.0,
+                color: Colors.yellow,
+                child: Align(
+                  alignment: FractionalOffset(0.2, 0.6),
+                  child: Container(
+                    height: 40.0,
+                    width: 40.0,
+                    color: Colors.red,
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
