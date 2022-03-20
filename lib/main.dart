@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application/profile/profile_screen.dart';
+import 'package:flutter_application/pertemuan02/pertemuan02_screen.dart';
+import 'package:flutter_application/profile/profile.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'title'),
     );
   }
 }
@@ -47,13 +48,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const ProfileScreen()));
-                },
-                child: const Text('Profile')),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Pertemuan02Screen())),
+                child: Text('Ke Pertemuan 02')),
             Image.network(
               'https://purepng.com/public/uploads/large/purepng.com-mariomariofictional-charactervideo-gamefranchisenintendodesigner-1701528634653vywuz.png',
               width: 200,
@@ -103,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
