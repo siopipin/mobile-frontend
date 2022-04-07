@@ -30,7 +30,7 @@ class Pertemuan02DetailScreen extends StatelessWidget {
                     child: Text(
                   '99',
                 )),
-              ))
+              )),
         ],
       ),
     );
