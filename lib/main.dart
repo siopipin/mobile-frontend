@@ -21,6 +21,9 @@ import 'package:flutter_application/pertemuan05/pertemuan05_sc_provider.dart';
 import 'package:flutter_application/pertemuan05/pertemuan05_screen.dart';
 import 'package:flutter_application/pertemuan05_1/ifb_provider.dart';
 import 'package:flutter_application/pertemuan05_1/pertemun05_1screen.dart';
+import 'package:flutter_application/pertemuan05_2/checkbox_scc.dart';
+import 'package:flutter_application/pertemuan05_2/logic_provider.dart';
+import 'package:flutter_application/pertemuan05_2/praktek_05.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -37,7 +40,8 @@ class MyApp extends StatelessWidget {
 
         ChangeNotifierProvider(create: (_) => Pertemuan05Provider()),
         ChangeNotifierProvider(create: (_) => Pertememuan05SCProvider()),
-        ChangeNotifierProvider(create: (_) => IFBProvider())
+        ChangeNotifierProvider(create: (_) => IFBProvider()),
+        ChangeNotifierProvider(create: (_) => LogicProvider()),
       ],
       child: MaterialApp(
           title: 'Flutter Demo',
@@ -45,7 +49,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.purple,
           ),
-          home: Pertemuan051Screen()),
+          home: Praktek05Screen()),
     );
   }
 }
