@@ -24,49 +24,34 @@ import 'package:flutter_application/pertemuan05_1/pertemun05_1screen.dart';
 import 'package:flutter_application/pertemuan05_2/checkbox_scc.dart';
 import 'package:flutter_application/pertemuan05_2/logic_provider.dart';
 import 'package:flutter_application/pertemuan05_2/praktek_05.dart';
+import 'package:flutter_application/pertemuan06/pertemuan06_provider.dart';
+import 'package:flutter_application/pertemuan06/pertemuan06_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    /// Provider kita pindahkan pada void main agar MyApp dapat menggunakan provider.
+    /// Tambahkan provider disini!
+
+    ChangeNotifierProvider(create: (_) => Pertemuan05Provider()),
+    ChangeNotifierProvider(create: (_) => Pertememuan05SCProvider()),
+    ChangeNotifierProvider(create: (_) => IFBProvider()),
+    ChangeNotifierProvider(create: (_) => LogicProvider()),
+    ChangeNotifierProvider(create: (_) => Pertemuan06Provider()),
+  ], child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [
-        /// Tambahkan provider disini!
-
-        ChangeNotifierProvider(create: (_) => Pertemuan05Provider()),
-        ChangeNotifierProvider(create: (_) => Pertememuan05SCProvider()),
-        ChangeNotifierProvider(create: (_) => IFBProvider()),
-        ChangeNotifierProvider(create: (_) => LogicProvider()),
-      ],
-      child: MaterialApp(
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.purple,
-          ),
-          home: Praktek05Screen()),
-    );
-  }
-}
-
-class MyApp2 extends StatelessWidget {
-  const MyApp2({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (context) => ProdukProvider(),
-      child: MaterialApp(
-          title: 'Flutter Demo',
-          debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primarySwatch: Colors.purple,
-          ),
-          home: TixIDProvScreen()),
+    final prov = Provider.of<Pertemuan06Provider>(context);
+    return MaterialApp(
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: prov.isActive == true ? prov.dark : prov.light,
+      home: Pertemuan06Screen(),
     );
   }
 }
