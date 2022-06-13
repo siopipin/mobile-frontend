@@ -30,6 +30,13 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
               child: Text('Dismiss'))
         ]),
         const SizedBox(height: 16),
+
+        //Banner maka gunakan materialBanner
+
+        MaterialBanner(
+            content: Text('Kartu Kredit expired, segera update CC'),
+            actions: [TextButton(onPressed: () {}, child: Text('data'))]),
+
         MaterialBanner(
             content: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -169,25 +176,11 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
   showSimpleDialog(BuildContext context) {
     return SimpleDialog(
       title: const Text('Set backup account'),
-      children: List.generate(4, ((index) {
-        return SimpleDialogOption(
-          onPressed: () {
-            String data = 'mail$index@mail.com';
-            return Navigator.pop(context, data);
-          },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              const Icon(Icons.abc, size: 36.0, color: Colors.amber),
-              Padding(
-                padding: const EdgeInsetsDirectional.only(start: 16.0),
-                child: Text('Username$index'),
-              ),
-            ],
-          ),
-        );
-      })),
+      children: [
+        ListTile(
+          title: Text('data'),
+        )
+      ],
     );
   }
 

@@ -2,6 +2,8 @@
 //
 //     final todosModel = todosModelFromJson(jsonString);
 
+import 'dart:ffi';
+
 import 'package:meta/meta.dart';
 import 'dart:convert';
 
@@ -37,7 +39,7 @@ class Todo {
   String? id;
   String? title;
   String? desc;
-  bool? status;
+  Bool? status;
 
   factory Todo.fromRawJson(String str) => Todo.fromJson(json.decode(str));
 

@@ -7,6 +7,15 @@ class FullScreenDialog extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Full-screen Dialog'),
+        actions: [
+          TextButton(
+              onPressed: () {},
+              child: Text(
+                'Save',
+                style:
+                    TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+              ))
+        ],
       ),
       body: const Center(
         child: Text("Full-screen dialog"),

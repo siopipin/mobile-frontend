@@ -1,0 +1,14 @@
+{
+    "data": [
+        {
+          "model": "Samsung Galaxy",
+          "img":
+              "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/I7500_with_screen_protector.jpg/220px-I7500_with_screen_protector.jpg",
+          "desc":
+              "Samsung Galaxy adalah seri perangkat telepon pintar berbasis Android yang dirancang, diproduksi dan dipasarkan oleh Samsung Electronics.",
+          "developer": "Samsung Electronics",
+          "price": 2500000,
+          "rating": 4.5
+        }
+    ]
+}
