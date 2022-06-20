@@ -24,7 +24,7 @@ class ContentWidget extends StatelessWidget {
               )
             : prov.selesaiMasak == true
                 ? Tooltip(
-                    message: 'Ayam Panggang',
+                    message: 'Gambar ayam panggang',
                     child: Image.network(
                       'https://bit.ly/ayampanggang22',
                       width: 300,

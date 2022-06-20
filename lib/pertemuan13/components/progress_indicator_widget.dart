@@ -11,23 +11,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(minimumSize: Size(100, 90)),
         onPressed: () {
-          if (prov.sliderValue.round() == 0) {
-            showDialog(
-                context: context,
-                builder: (context) {
-                  return AlertDialog(
-                    title: Text('Durasi Belum diatur'),
-                    content: Text('Tarik slide untuk mengatur value durasi'),
-                    actions: [
-                      TextButton(
-                          onPressed: () => Navigator.pop(context),
-                          child: Text('Oke'))
-                    ],
-                  );
-                });
-          } else {
-            prov.mulaiMemanggang(prov.sliderValue.round());
-          }
+          prov.mulaiMemanggang(prov.sliderValue.round());
         },
         child: prov.sedangMemanggang == true
             ? const CircularProgressIndicator(

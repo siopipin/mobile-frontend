@@ -21,14 +21,15 @@ class _Pertemuan13ScreenState extends State<Pertemuan13Screen> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          Text('Durasi Memanggang: ${prov.sliderValue.round().toString()}'),
+          Text(
+              'Durasi Memanggang: ${prov.sliderValue.round().toString()} Menit'),
           const SlideWidget(),
           const Align(
             child: ProgressIndicatorWidget(),
             alignment: Alignment.bottomRight,
           ),
           const SizedBox(height: 100),
-          const ContentWidget()
+          const ContentWidget(),
         ]),
       ),
     );

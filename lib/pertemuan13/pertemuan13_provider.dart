@@ -25,10 +25,14 @@ class Pertemuan13Provider extends ChangeNotifier {
   }
 
   mulaiMemanggang(int val) async {
+    //Akan ada proses loading karena sedang memanggang = true
     setSedangMemanggang = true;
+
     Future.delayed(Duration(seconds: val), () {
       setSedangMemanggang = false;
       setSelesaiMasak = true;
+
+      print('selesai memasak');
     });
   }
 }

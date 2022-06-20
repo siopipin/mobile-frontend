@@ -10,6 +10,7 @@ class SlideWidget extends StatelessWidget {
     final prov = Provider.of<Pertemuan13Provider>(context);
     return Slider(
       value: prov.sliderValue,
+      divisions: 10,
       min: 0,
       max: 10,
       label: prov.sliderValue.round().toString(),
