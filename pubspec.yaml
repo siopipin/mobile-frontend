@@ -36,12 +36,20 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.2
   flutter_fab_dialer: ^0.1.1
+  intl: ^0.17.0
+  day_night_time_picker: ^1.1.1
+
+  # Adding Package
+  image_picker: ^0.8.0
+  carousel_slider: ^4.1.1
+  webview_flutter: ^3.0.4
+  url_launcher: ^6.1.4
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
+  # The "flutter_lints" package beplow contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint

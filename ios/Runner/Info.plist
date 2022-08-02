@@ -10,6 +10,16 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow access to your phone's location</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access your photo library</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Allow access your phone's camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Allow the app to record using your phone's microphone</string>
+
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -45,5 +55,6 @@
 	<false/>
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
+
 </dict>
 </plist>
