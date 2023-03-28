@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application/pertemuan02/pertemuan02_detail_screen.dart';
+import 'package:flutter_application/pertemuan02/teori02_screen.dart';
 
 class Pertemuan02Screen extends StatelessWidget {
   const Pertemuan02Screen({Key? key}) : super(key: key);
@@ -11,6 +12,13 @@ class Pertemuan02Screen extends StatelessWidget {
       body: Column(children: [
         //atas
         Text('Ke Halaman Detail'),
+
+        ElevatedButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Teori02Screen()));
+            },
+            child: Text("Pert02 Detail")),
 
         //bawah
         ElevatedButton(
