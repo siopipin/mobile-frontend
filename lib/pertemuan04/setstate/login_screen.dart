@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/pertemuan04/provider/produk2_screen.dart';
 import 'package:flutter_application/pertemuan04/provider/produk_provider.dart';
 import 'package:flutter_application/pertemuan04/setstate/components/login_textfield_david.dart';
+import 'package:flutter_application/pertemuan04/setstate/pertemuan04_ifbpagi.dart';
 import 'package:flutter_application/pertemuan04/setstate/produk_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -141,6 +142,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       minimumSize: Size(
                           MediaQuery.of(context).size.width / 2 + 100, 50)),
                 ),
+
+                // Widget custom.
+                for (int i = 0; i < 5; i++)
+                  Pertemuan04IFBPagiTeori(
+                      nama: i.toString(), keluhan: "Keluahan ${i.toString()}"),
 
                 const Spacer(),
               ])),

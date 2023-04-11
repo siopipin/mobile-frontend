@@ -12,7 +12,7 @@ class Pertemuan06Screen extends StatefulWidget {
 
 class _Pertemuan06ScreenState extends State<Pertemuan06Screen> {
   //State untuk switch SC C pagi
-  bool isWifiActive = false;
+  bool? isWifiActive = false;
   String mhs = 'Pilih mhs';
   List daftarmhs = [];
 
@@ -101,6 +101,24 @@ class _Pertemuan06ScreenState extends State<Pertemuan06Screen> {
             //     }),
 
             //Switch
+            GestureDetector(
+              onLongPress: () {
+                print("Sedang tap");
+              },
+              child: Text(
+                "Klik saya",
+                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              ),
+            ),
+
+            TextButton(
+              onPressed: () {},
+              child: Text(
+                "Klik saya",
+                style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              ),
+            ),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -175,7 +193,7 @@ class _Pertemuan06ScreenState extends State<Pertemuan06Screen> {
             SwitchListTile(
                 title: Text('Aktifkan Wifi'),
                 subtitle: Text('Silahkan turn on agar wifi aktif'),
-                value: isWifiActive,
+                value: isWifiActive!,
                 onChanged: (val) {
                   print(val);
                   setState(() {

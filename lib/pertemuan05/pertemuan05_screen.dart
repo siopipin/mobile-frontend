@@ -21,6 +21,12 @@ class _Pertemuan05ScreenState extends State<Pertemuan05Screen> {
   bool kelasPagi = false;
   bool kelasSiang = false;
 
+  //status filterchips
+  //sekolah
+  bool statusChipSekolah = false;
+
+  int x = 0;
+
   @override
   Widget build(BuildContext context) {
     // class ini menggunakan provider Pertemuan05Provider
@@ -37,6 +43,23 @@ class _Pertemuan05ScreenState extends State<Pertemuan05Screen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                // a + b = x // x disini kosong.
+                Row(
+                  children: [
+                    Text("A"),
+                    Text("+"),
+                    Text("B"),
+                    TextButton(
+                        onPressed: () {
+                          setState(() {
+                            x = 10 + 5;
+                          });
+                        },
+                        child: Text("=")),
+                    Text(x.toString())
+                  ],
+                ),
+
                 //Soal 1: Menggunakan Checkbox
                 const Text(
                     '1. Memori yang berfungsi untuk tempat penyimpanan data sementara disebut..'),
@@ -47,6 +70,7 @@ class _Pertemuan05ScreenState extends State<Pertemuan05Screen> {
                     Checkbox(
                       value: soal1a,
                       onChanged: (val) {
+                        print(val);
                         setState(() {
                           soal1a = val;
                         });
@@ -87,18 +111,18 @@ class _Pertemuan05ScreenState extends State<Pertemuan05Screen> {
                   ),
 
                 const Divider(),
-                //Soal 2: Menggunakan Checkbox
+                //Soal 2: Menggunakan Radio Button
                 const Text('2.Skema desain pembangunan jaringan disebut..'),
                 Row(
                   children: [
                     Text('a.'),
                     SizedBox(width: 5),
                     Radio(
-                      value: 'topologi',
+                      value: 'topologi__',
                       groupValue: soal2,
                       onChanged: (val) {
                         setState(() {
-                          soal2 = 'topologi';
+                          soal2 = 'topologi__';
                         });
                       },
                     ),
@@ -125,7 +149,7 @@ class _Pertemuan05ScreenState extends State<Pertemuan05Screen> {
                 //CheckJawaban
                 if (soal2 == 'answ')
                   Container()
-                else if (soal2 == 'topologi')
+                else if (soal2 == 'topologi__')
                   const Text(
                     'Benar!',
                     style: TextStyle(
@@ -174,9 +198,12 @@ class _Pertemuan05ScreenState extends State<Pertemuan05Screen> {
                       label: Text('Sekolah'),
                       //Atur color disini
                       selectedColor: Colors.blue[200],
-                      selected: prov.statusSekolah,
+                      selected: statusChipSekolah,
                       onSelected: (val) {
-                        prov.setSekolah = val;
+                        print(val);
+                        setState(() {
+                          statusChipSekolah = val;
+                        });
                       },
                     ),
                     const SizedBox(width: 5),

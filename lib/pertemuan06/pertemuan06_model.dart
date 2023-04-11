@@ -39,7 +39,7 @@ class Todo {
   String? id;
   String? title;
   String? desc;
-  Bool? status;
+  bool? status;
 
   factory Todo.fromRawJson(String str) => Todo.fromJson(json.decode(str));
 
