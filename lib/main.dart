@@ -27,6 +27,7 @@ import 'package:flutter_application/pertemuan09/twitter_screen.dart';
 import 'package:flutter_application/pertemuan10/pertemaun10_if_b_screen.dart';
 import 'package:flutter_application/pertemuan10/pertemuan10_screen.dart';
 import 'package:flutter_application/pertemuan11/p11_praktek_screen.dart';
+import 'package:flutter_application/pertemuan11/p11_screen.dart';
 import 'package:flutter_application/pertemuan11/pertemuan11_provider.dart';
 import 'package:flutter_application/pertemuan11/pertemuan11_screen.dart';
 
@@ -79,7 +80,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
-      home: P11PraktekScreen(),
+      home: P11Screen(),
     );
   }
 }
