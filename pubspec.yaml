@@ -34,8 +34,11 @@ dependencies:
   intl: ^0.17.0
   day_night_time_picker: ^1.1.1
 
+  # http
+  http: ^1.0.0
+
   # Adding Package
-  image_picker: ^0.8.0
+  # image_picker: ^0.8.0
   carousel_slider: ^4.1.1
   webview_flutter: ^3.0.4
   url_launcher: ^6.1.4

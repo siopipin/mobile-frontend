@@ -49,14 +49,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.1"
-  cross_file:
-    dependency: transitive
-    description:
-      name: cross_file
-      sha256: "7632a2bcddc8cef4afde3c6f80e69b29a7060e176f01119c229fe4eb3a2a3d4f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.3+1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -94,14 +86,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.4"
-  flutter_plugin_android_lifecycle:
-    dependency: transitive
-    description:
-      name: flutter_plugin_android_lifecycle
-      sha256: "6ffe524cd6a7d49d99b2bf979a4f6ad82304c639cea4c8d3d0f8cf1aff24e74a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.6"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -113,13 +97,13 @@ packages:
     source: sdk
     version: "0.0.0"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
-      sha256: "2ed163531e071c2c6b7c659635112f24cb64ecbebf6af46b550d536c0b1aa112"
+      sha256: "4c3f04bfb64d3efd508d06b41b825542f08122d30bda4933fb95c069d22a4fa3"
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.4"
+    version: "1.0.0"
   http_parser:
     dependency: transitive
     description:
@@ -128,46 +112,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.0.1"
-  image_picker:
-    dependency: "direct main"
-    description:
-      name: image_picker
-      sha256: f3712cd190227fb92e0960cb0ce22928ba042c7183b16864ade83b259adf8ea6
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.5+3"
-  image_picker_android:
-    dependency: transitive
-    description:
-      name: image_picker_android
-      sha256: "2d4c2634731ced2debc2a36273351dd1cb68080d505c12c472b0dc0657cd853c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.5+1"
-  image_picker_for_web:
-    dependency: transitive
-    description:
-      name: image_picker_for_web
-      sha256: "60f306ffbdcada4bc8b2691acc420258a1b758e102c87c4f94fb568d640f0e0e"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.8"
-  image_picker_ios:
-    dependency: transitive
-    description:
-      name: image_picker_ios
-      sha256: c1af1bd2223362771e161a72c5361c762a7719f822583762b3ddd1971bcea081
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.8.5+5"
-  image_picker_platform_interface:
-    dependency: transitive
-    description:
-      name: image_picker_platform_interface
-      sha256: b5cfa6b0364979411dfbd3a68bd874452eff22344f184f92af79bddc4acf4742
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.5.0"
   intl:
     dependency: "direct main"
     description:
@@ -414,5 +358,5 @@ packages:
     source: hosted
     version: "2.8.1"
 sdks:
-  dart: ">=3.0.0-0 <4.0.0"
+  dart: ">=3.0.0 <4.0.0"
   flutter: ">=3.0.0"
