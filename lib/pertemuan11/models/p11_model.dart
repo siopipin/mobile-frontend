@@ -22,7 +22,7 @@ class CustomerModel {
   String? nameCouple;
   String? nameChild1;
   String? nameChild2;
-  Null? nameChild3;
+  dynamic nameChild3;
   String? address;
   String? currentLivingAddress;
   Null? statusOut;

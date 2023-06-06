@@ -25,7 +25,20 @@ class _P11ModelScreenState extends State<P11ModelScreen> {
       appBar: AppBar(),
       body: watchData.data.nameEmployee == null
           ? CircularProgressIndicator()
-          : Text(watchData.data.nameEmployee!),
+          : ListTile(
+              title: Text(watchData.data.nameBank!),
+              trailing: PopupMenuButton(
+                  icon: Icon(Icons.more_vert),
+                  itemBuilder: (context) {
+                    return [
+                      PopupMenuItem(
+                          child: TextButton(
+                              onPressed: () {},
+                              child: Text(watchData.data.nameChild3 ?? "-"))),
+                      PopupMenuItem(child: Text("Delete"))
+                    ];
+                  }),
+            ),
     );
   }
 }
