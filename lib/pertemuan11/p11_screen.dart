@@ -12,10 +12,11 @@ class P11ScreenState extends State<P11Screen> {
   void initState() {
     // TODO: implement initState
     initialData();
+    getNama();
     super.initState();
   }
 
-  String nama = "Willie";
+  String? nama;
 
   final tmp = {
     'data': [
@@ -48,6 +49,14 @@ class P11ScreenState extends State<P11Screen> {
     print(tmp['data']![0]['model']);
   }
 
+  getNama() {
+    Future.delayed(Duration(seconds: 5), () {
+      setState(() {
+        nama = "Pipin";
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -59,9 +68,14 @@ class P11ScreenState extends State<P11Screen> {
             itemCount: tmp['data']!.length,
             itemBuilder: (context, i) {
               var item = tmp['data']![i];
-              return Text(
-                item['model'].toString(),
-                style: TextStyle(fontSize: 20),
+              return Column(
+                children: [
+                  Text(
+                    item['model'].toString(),
+                    style: TextStyle(fontSize: 20),
+                  ),
+                  nama == null ? CircularProgressIndicator() : Text(nama!)
+                ],
               );
             }),
       )),
