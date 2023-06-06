@@ -24,6 +24,14 @@ class Pertemuan11Provider extends ChangeNotifier {
         "price": 1500000,
         "rating": 4.1
       },
+      {
+        "model": "Iphone 15",
+        "img":
+            "https://www.shutterstock.com/image-photo/original-model-sony-walkman-headphones-260nw-610775501.jpg",
+        "developer": "Sony Mobile",
+        "price": 25000000,
+        "rating": 4.1
+      },
     ]
   };
 

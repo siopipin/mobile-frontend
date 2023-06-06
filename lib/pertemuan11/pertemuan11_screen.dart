@@ -75,11 +75,53 @@ class _Pertemuan11ScreenState extends State<Pertemuan11Screen> {
           return Column(
             children: [
               ListTile(
-                leading:
-                    CircleAvatar(backgroundImage: NetworkImage(item['img'])),
-                title: Text(item['model']),
+                  leading:
+                      CircleAvatar(backgroundImage: NetworkImage(item['img'])),
+                  title: Text(item['model']),
+                  subtitle: Text(item['developer']),
+                  trailing: PopupMenuButton(
+                    icon: Icon(Icons.more_vert),
+                    itemBuilder: (context) {
+                      return [
+                        PopupMenuItem(
+                          child: TextButton(
+                              onPressed: () {}, child: Text("Update")),
+                        ),
+                        PopupMenuItem(
+                          child: TextButton(
+                              onPressed: () {}, child: Text("More..")),
+                        )
+                      ];
+                    },
+                  )),
+              const Divider(
+                color: Colors.black,
+                height: 20,
+                endIndent: 1.0,
               ),
-              const Divider()
+              Row(
+                children: [
+                  Column(
+                    children: [
+                      Container(
+                        width: 200,
+                        height: 50,
+                        child: Text("Kiri"),
+                      ),
+                      Container(
+                        width: 200,
+                        child: Divider(
+                          height: 30,
+                          color: Colors.black,
+                          endIndent: 10,
+                          indent: 40,
+                        ),
+                      )
+                    ],
+                  ),
+                  // Expanded(child: Text("data"))
+                ],
+              )
             ],
           );
         },
