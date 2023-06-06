@@ -48,7 +48,7 @@ class _Pertemuan11ScreenState extends State<Pertemuan11Screen> {
           const PopupMenuDivider(),
           PopupMenuItem(
             child: ListTile(
-              onLongPress: () {
+              onTap: () {
                 print('laptop');
                 prov.ubahList('laptop');
                 Navigator.pop(context);

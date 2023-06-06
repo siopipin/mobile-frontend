@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 class Pertemuan09Screen extends StatefulWidget {
@@ -92,11 +94,7 @@ class _Pertemuan09ScreenState extends State<Pertemuan09Screen> {
                     print('Favorite');
                   },
                   child: Text('Favorite')),
-              TextButton(
-                  onPressed: () {
-                    print('Saved');
-                  },
-                  child: Text('Saved')),
+              TextButton(onPressed: () {}, child: Text('Saved')),
             ],
           ),
         ));

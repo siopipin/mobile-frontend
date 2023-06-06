@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application/pertemuan07/p7_screen.dart';
 
 class Pertemuan07Body extends StatelessWidget {
   final String title;
@@ -19,7 +20,7 @@ class Pertemuan07Body extends StatelessWidget {
             title,
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
           ),
-          Image.asset('assets/logo.png')
+          Image.asset('assets/logo.png'),
         ]),
       );
     } else if (title == 'Search') {

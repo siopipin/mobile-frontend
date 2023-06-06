@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/pertemuan10/components/fullscreen_dialog_widget.dart';
 
 class Pertemuan10Screen extends StatefulWidget {
-  const Pertemuan10Screen({Key? key}) : super(key: key);
+  final String? title;
+  const Pertemuan10Screen({Key? key, required this.title}) : super(key: key);
 
   @override
   State<Pertemuan10Screen> createState() => _Pertemuan10ScreenState();
@@ -16,7 +17,8 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pertemuan10'),
+        title: Text(widget.title ?? "Title"),
+        elevation: 4,
       ),
       body: Column(children: [
         MaterialBanner(content: Text('Hallo IF-B Pagi'), actions: [
@@ -35,7 +37,12 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
 
         MaterialBanner(
             content: Text('Kartu Kredit expired, segera update CC'),
-            actions: [TextButton(onPressed: () {}, child: Text('data'))]),
+            actions: [
+              TextButton(
+                  onPressed: () => ScaffoldMessenger.of(context)
+                      .showMaterialBanner(showBanner(context, "data")),
+                  child: Text('data'))
+            ]),
 
         MaterialBanner(
             content: Column(
@@ -52,7 +59,7 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
               TextButton(
                   onPressed: () => ScaffoldMessenger.of(context)
                     ..removeCurrentMaterialBanner()
-                    ..showMaterialBanner(showBanner(context)),
+                    ..showMaterialBanner(showBanner(context, "data")),
                   child: const Text('Show Banner'))
             ]),
         const Divider(),
@@ -116,6 +123,13 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
                   onPressed: () =>
                       ScaffoldMessenger.of(context).showSnackBar(snakeBar))
             ]),
+
+        // button untuk pop
+        ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context, "dialog");
+            },
+            child: Text("Confirm"))
       ]),
     );
   }
@@ -126,21 +140,27 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
     return MaterialBanner(content: Text('Hallo IF-B Pagi'), actions: [
       TextButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pop(context, "Data P10");
           },
           child: Text('Dismiss'))
     ]);
   }
 
-  showBanner(BuildContext context) {
+  showBanner(BuildContext context, String data) {
     return MaterialBanner(
-        content: const Text('Welcome to banner info!'),
+        content: Text('Welcome $data'),
         leading: const Icon(
           Icons.info,
           color: Colors.orange,
         ),
         actions: [
-          TextButton(onPressed: () {}, child: const Text('Agree')),
+          TextButton(
+              onPressed: () {
+                ScaffoldMessenger.of(context)
+                  ..removeCurrentSnackBar()
+                  ..showSnackBar(showSnackBar(context, data));
+              },
+              child: const Text('Update')),
           TextButton(
               onPressed: () =>
                   ScaffoldMessenger.of(context).hideCurrentMaterialBanner(),
@@ -165,7 +185,9 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
         ),
         TextButton(
           onPressed: () {
-            Navigator.pop(context);
+            ScaffoldMessenger.of(context)
+              ..removeCurrentMaterialBanner()
+              ..showMaterialBanner(showBanner(context, "IF B Pagi"));
           },
           child: Text('ACCEPT'),
         ),
@@ -184,15 +206,17 @@ class _Pertemuan10ScreenState extends State<Pertemuan10Screen> {
     );
   }
 
-  showSnackBar(BuildContext context) {
+  showSnackBar(BuildContext context, String data) {
     return SnackBar(
       behavior: SnackBarBehavior.floating,
       duration: Duration(seconds: 3),
-      content: Text('Welcome to snackbar'),
+      content: Text('Welcome to snackbar dengan data $data'),
       action: SnackBarAction(
         label: 'Dismiss',
         textColor: Colors.white,
-        onPressed: () => ScaffoldMessenger.of(context).removeCurrentSnackBar(),
+        onPressed: () {
+          ScaffoldMessenger.of(context).removeCurrentSnackBar();
+        },
       ),
     );
   }

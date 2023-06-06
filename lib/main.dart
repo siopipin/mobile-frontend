@@ -17,6 +17,17 @@ import 'package:flutter_application/pertemuan06/pertemuan06_provider.dart';
 import 'package:flutter_application/pertemuan06/pertemuan06_screen.dart';
 import 'package:flutter_application/pertemuan06/pertemuan06_teori_ifb.dart';
 import 'package:flutter_application/pertemuan06/pertemuan06teori_provider.dart';
+import 'package:flutter_application/pertemuan07/p7_screen.dart';
+import 'package:flutter_application/pertemuan07/pertemuan07_provider.dart';
+import 'package:flutter_application/pertemuan07/pertemuan07_screen.dart';
+import 'package:flutter_application/pertemuan09/p09_ifb_screen.dart';
+import 'package:flutter_application/pertemuan09/pertemuan09_provider.dart';
+import 'package:flutter_application/pertemuan09/pertemuan09_screen.dart';
+import 'package:flutter_application/pertemuan09/twitter_screen.dart';
+import 'package:flutter_application/pertemuan10/pertemaun10_if_b_screen.dart';
+import 'package:flutter_application/pertemuan10/pertemuan10_screen.dart';
+import 'package:flutter_application/pertemuan11/pertemuan11_provider.dart';
+import 'package:flutter_application/pertemuan11/pertemuan11_screen.dart';
 
 //Import Minggu M15
 import 'package:flutter_application/pertemuan15/pertemuan15_provider.dart';
@@ -43,6 +54,15 @@ void main() {
 
     //Provider minggu06.1
     ChangeNotifierProvider(create: (_) => Pertemuan06TeoriProvider()),
+
+    //Provider minggu07
+    ChangeNotifierProvider(create: (_) => Pertemuan07Provider()),
+
+    //Provider minggu09
+    ChangeNotifierProvider(create: (_) => Pertemuan09Provider()),
+
+    //Provider minggu11
+    ChangeNotifierProvider(create: (_) => Pertemuan11Provider())
   ], child: const MyApp()));
 }
 
@@ -56,9 +76,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.light,
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.blue,
       ),
-      home: Pertemuan06TeoriIFB(),
+      home: Pertemuan11Screen(),
     );
   }
 }

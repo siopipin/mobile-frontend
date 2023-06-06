@@ -11,7 +11,7 @@ class Pertemuan11Provider extends ChangeNotifier {
       {
         "model": "Samsung Galaxy",
         "img":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/I7500_with_screen_protector.jpg/220px-I7500_with_screen_protector.jpg",
+            "https://www.shutterstock.com/image-photo/belgrade-serbia-december-05-2019-260nw-1586003902.jpg",
         "developer": "Samsung Electronics",
         "price": 2500000,
         "rating": 4.5
@@ -19,7 +19,7 @@ class Pertemuan11Provider extends ChangeNotifier {
       {
         "model": "Sony Xperia Z",
         "img":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Sony_Xperia_Z.JPG/200px-Sony_Xperia_Z.JPG",
+            "https://www.shutterstock.com/image-photo/original-model-sony-walkman-headphones-260nw-610775501.jpg",
         "developer": "Sony Mobile",
         "price": 1500000,
         "rating": 4.1
@@ -32,7 +32,7 @@ class Pertemuan11Provider extends ChangeNotifier {
       {
         "model": "Lenovo Legion",
         "img":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Lenovo_Legion_Y520_%281%29.jpg/220px-Lenovo_Legion_Y520_%281%29.jpg",
+            "https://www.shutterstock.com/image-photo/jakarta-indonesia-saturday-lenovo-gaming-260nw-1572146239.jpg",
         "developer": "Lenovo",
         "price": 12500000,
         "rating": 4
@@ -40,7 +40,7 @@ class Pertemuan11Provider extends ChangeNotifier {
       {
         "model": "HP EliteBook",
         "img":
-            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/HP_Elitebook_820_G4.png/250px-HP_Elitebook_820_G4.png",
+            "https://www.shutterstock.com/image-photo/jakarta-indonesia-desember-26-2019-260nw-1598491102.jpg",
         "developer": "HP",
         "price": 2500000,
         "rating": 4.8
