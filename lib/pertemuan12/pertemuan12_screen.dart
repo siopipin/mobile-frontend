@@ -72,66 +72,128 @@ class _Pertemuan12ScreenState extends State<Pertemuan12Screen> {
       return const CircularProgressIndicator();
     } else {
       return ListView(
+          shrinkWrap: true,
           children: List.generate(
-        prov.data.length,
-        (index) {
-          var item = prov.data['data']![index];
-          return GestureDetector(
-            onTap: () => print('Ke halaman detail'),
-            child: Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                children: [
-                  ListTile(
-                    leading: Image.network(item['img']),
-                    title: Text(item['model']),
-                    subtitle: Text(
-                      item['developer'],
-                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text(
-                      item['desc'].toString().length >= 100
-                          ? item['desc'].toString().substring(0, 100) +
-                              "...read more"
-                          : item['desc'],
-                      style: TextStyle(color: Colors.black.withOpacity(0.6)),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            prov.data.length,
+            (index) {
+              var item = prov.data['data']![index];
+              return GestureDetector(
+                  onTap: () => print('Ke halaman detail'),
+                  child: Column(
                     children: [
-                      ButtonBar(
-                        alignment: MainAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Rp. ${item['price'].toString()},-',
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text('Rating ${item['rating'].toString()}'),
-                        ],
+                      Card(
+                        // elevation: 0,
+                        clipBehavior: Clip.antiAlias,
+                        child: Column(
+                          children: [
+                            ListTile(
+                              leading: Image.network(item['img']),
+                              title: Text(item['model']),
+                              subtitle: Text(
+                                item['developer'],
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Text(
+                                item['desc'].toString().length >= 100
+                                    ? item['desc']
+                                            .toString()
+                                            .substring(0, 100) +
+                                        "...read more"
+                                    : item['desc'],
+                                style: TextStyle(
+                                    color: Colors.black.withOpacity(0.6)),
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                ButtonBar(
+                                  alignment: MainAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Rp. ${item['price'].toString()},-',
+                                      style: const TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text('Rating ${item['rating'].toString()}'),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    IconButton(
+                                        onPressed: () {
+                                          print('telah disukai');
+                                        },
+                                        icon: const Icon(Icons.thumb_up)),
+                                    IconButton(
+                                        onPressed: () {},
+                                        icon: const Icon(Icons.share))
+                                  ],
+                                )
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                      Row(
+                      Card(
+                          child: Column(
                         children: [
-                          IconButton(
-                              onPressed: () {
-                                print('telah disukai');
-                              },
-                              icon: const Icon(Icons.thumb_up)),
-                          IconButton(
-                              onPressed: () {}, icon: const Icon(Icons.share))
+                          //header
+                          ListTile(
+                            title: Text("data"),
+                          ),
+
+                          Container(
+                            height: 200,
+                            width: double.infinity,
+                            child: ListView(
+                              shrinkWrap: true,
+                              scrollDirection: Axis.horizontal,
+                              children: [
+                                Image.network(
+                                    "https://t-2.tstatic.net/medan/foto/bank/images2/Contoh-gambar.jpg"),
+                                SizedBox(width: 10),
+                                Image.network(
+                                    "https://creatphoto.files.wordpress.com/2012/07/street_by_hotfiresantud4jnp2a.jpg"),
+                              ],
+                            ),
+                          ),
+
+                          //konten
+
+                          ListTile(
+                            trailing: Icon(Icons.arrow_drop_down),
+                          )
                         ],
+                      )),
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                              topLeft: Radius.circular(10),
+                              topRight: Radius.circular(10),
+                              bottomLeft: Radius.circular(10),
+                              bottomRight: Radius.circular(10)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: const Color.fromARGB(255, 235, 233, 233)
+                                  .withOpacity(0.5),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: Text("data"),
                       )
                     ],
-                  )
-                ],
-              ),
-            ),
-          );
-        },
-      ));
+                  ));
+            },
+          ));
     }
   }
 }

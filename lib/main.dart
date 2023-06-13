@@ -32,6 +32,10 @@ import 'package:flutter_application/pertemuan11/p11_screen.dart';
 import 'package:flutter_application/pertemuan11/pertemuan11_provider.dart';
 import 'package:flutter_application/pertemuan11/pertemuan11_screen.dart';
 import 'package:flutter_application/pertemuan11/providers/p11_provider.dart';
+import 'package:flutter_application/pertemuan12/p12ifb_screen.dart';
+import 'package:flutter_application/pertemuan12/pert12prov.dart';
+import 'package:flutter_application/pertemuan12/pertemuan12_provider.dart';
+import 'package:flutter_application/pertemuan12/pertemuan12_screen.dart';
 
 //Import Minggu M15
 import 'package:flutter_application/pertemuan15/pertemuan15_provider.dart';
@@ -68,7 +72,9 @@ void main() {
     //Provider minggu11
     ChangeNotifierProvider(create: (_) => Pertemuan11Provider()),
 
-    ChangeNotifierProvider(create: (_) => P11Provider())
+    ChangeNotifierProvider(create: (_) => P11Provider()),
+    ChangeNotifierProvider(create: (_) => Pertemuan12Provider()),
+    ChangeNotifierProvider(create: (_) => Pert12Prov()),
   ], child: const MyApp()));
 }
 
@@ -84,7 +90,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
-      home: P11ModelScreen(),
+      home: P12IFBSCreen(),
     );
   }
 }

@@ -10,7 +10,7 @@ class Pertemuan12Provider extends ChangeNotifier {
   final hp = {
     "data": [
       {
-        "model": "Samsung Galaxy",
+        "model": "Samsung Galaxy2",
         "img":
             "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/I7500_with_screen_protector.jpg/220px-I7500_with_screen_protector.jpg",
         "desc":
