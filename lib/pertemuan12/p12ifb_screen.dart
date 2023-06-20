@@ -37,6 +37,16 @@ class _P12IFBSCreenState extends State<P12IFBSCreen> {
         "price": 1500000,
         "rating": 4.1
       },
+      {
+        "model": "Nokia 2000",
+        "img":
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Sony_Xperia_Z.JPG/200px-Sony_Xperia_Z.JPG",
+        "desc":
+            "Sony Xperia Z merupakan handphone HP dengan kapasitas 2330mAh dan layar 5 yang dilengkapi dengan kamera belakang 13.1MP dengan tingkat densitas piksel sebesar 441ppi dan tampilan resolusi sebesar 1080 x 1920pixels. Dengan berat sebesar 146g, handphone HP ini memiliki prosesor Quad Core. Tanggal rilis untuk Sony Xperia Z: September 2013",
+        "developer": "Sony Mobile",
+        "price": 1500000,
+        "rating": 4.1
+      },
     ]
   };
 
@@ -80,22 +90,22 @@ class _P12IFBSCreenState extends State<P12IFBSCreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(),
-        body: Column(
-          children: [
-            Card(
-                child: ListTile(
-              title: Text(
-                nama ?? "tunggu data ...",
-                style: TextStyle(fontSize: 18),
-              ),
-              subtitle: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(nim ?? "-"),
-                    Text(dataHP['data'][0]['model'] ?? "-")
-                  ]),
-            )),
-          ],
-        ));
+        body: ListView.builder(
+            itemCount: dataHP["data"].length,
+            itemBuilder: (context, i) {
+              return Card(
+                  child: ListTile(
+                title: Text(
+                  nama ?? "tunggu data ...",
+                  style: TextStyle(fontSize: 18),
+                ),
+                subtitle: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(nim ?? "menunggu data nim...."),
+                      Text(dataHP['data'][i]['model'] ?? "-")
+                    ]),
+              ));
+            }));
   }
 }

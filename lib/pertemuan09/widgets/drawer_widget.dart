@@ -42,8 +42,12 @@ class DrawerWidget extends StatelessWidget {
           Divider(),
           GestureDetector(
             onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfileTest()));
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => ProfileTest(
+                            dev: "",
+                          )));
             },
             child: ListTile(
               leading: Icon(Icons.people),

@@ -3,7 +3,10 @@ import 'package:flutter_application/pertemuan09/p09_ifb_screen.dart';
 import 'package:flutter_application/pertemuan09/widgets/drawer_widget.dart';
 
 class ProfileTest extends StatefulWidget {
-  ProfileTest({super.key});
+  final String title;
+  final String dev;
+
+  ProfileTest({super.key, this.title = "Profile", required this.dev});
 
   @override
   State<ProfileTest> createState() => ProfileTestState();
@@ -16,9 +19,9 @@ class ProfileTestState extends State<ProfileTest> {
         length: 4,
         child: Scaffold(
           appBar: AppBar(
-            title: Text("Appbar"),
+            title: Text(widget.title),
             bottom: TabBar(tabs: [
-              Text("Home"),
+              Text(widget.dev),
               Text("Profile"),
               Text("About"),
               Text("Privasi"),

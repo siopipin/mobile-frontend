@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application/pertemuan09/profile_screen_test.dart';
 import 'package:flutter_application/pertemuan12/pertemuan12_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -78,7 +79,13 @@ class _Pertemuan12ScreenState extends State<Pertemuan12Screen> {
             (index) {
               var item = prov.data['data']![index];
               return GestureDetector(
-                  onTap: () => print('Ke halaman detail'),
+                  onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ProfileTest(
+                                title: item['model'],
+                                dev: item['developer'],
+                              ))),
                   child: Column(
                     children: [
                       Card(
