@@ -1,6 +1,9 @@
+import 'dart:io';
+
 import 'package:day_night_time_picker/lib/daynight_timepicker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/pertemuan14/pilihtgllahir.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:intl/intl.dart';
 import 'dart:async';
 
@@ -17,13 +20,24 @@ class _Pertemuan14ScreenState extends State<Pertemuan14Screen> {
   DateTime? tglawal;
   DateTime? tglakhir;
 
+  var tanggalTerpilih;
+
+  XFile? image;
+
+  TextEditingController? ctrlDate;
+  @override
+  void initState() {
+    ctrlDate = TextEditingController(text: "00/00/0000");
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Pertemuan 14')),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
+        child: ListView(
           children: [
             //Latihan datePicker untuk IFC pagi
             TanggalTerpilih(),
@@ -146,7 +160,89 @@ class _Pertemuan14ScreenState extends State<Pertemuan14Screen> {
                     },
                     icon: const Icon(Icons.timer))
               ],
-            )
+            ),
+            Divider(),
+            // baris datetimepicker
+            Container(
+              width: double.infinity,
+              height: 100,
+              child: Row(
+                children: [
+                  //Text tanggal terpilih
+                  Expanded(
+                      child: TextField(
+                    controller: ctrlDate,
+                    onChanged: (val) {
+                      setState(() {
+                        ctrlDate = TextEditingController(text: val);
+                      });
+                    },
+                  )),
+                  //Dialog untuk memilih tanggal
+                  IconButton(
+                      onPressed: () async {
+                        //menampilkan sebuah dialog untuk pilih tanggal
+                        var tgl = await showDatePicker(
+                          context: context,
+                          initialDate: DateTime.now(),
+                          firstDate: DateTime(2003),
+                          lastDate: DateTime(2030),
+                        );
+
+                        if (tgl == null) {
+                          setState(() {
+                            tanggalTerpilih = "tidak ada tanggal terpilh";
+                          });
+                        } else {
+                          setState(() {
+                            // cara manual
+                            var tmp = '${tgl.day}/${tgl.month}/${tgl.year}';
+                            // dengan package intl
+                            // var tmp = DateFormat.yMMMMEEEEd().format(tgl);
+                            ctrlDate = TextEditingController(text: tmp);
+                            tanggalTerpilih = tmp;
+                          });
+                        }
+
+                        print("Tanggal terpilih: $tgl");
+                      },
+                      icon: Icon(Icons.date_range_rounded))
+                ],
+              ),
+            ),
+
+            Divider(),
+
+            image == null
+                ? Container()
+                : Container(
+                    width: 100,
+                    child: Image.file(
+                      File(image!.path),
+                      width: 100,
+                    )),
+
+            IconButton(
+                onPressed: () async {
+                  final ImagePicker picker = ImagePicker();
+                  var tmpimage =
+                      await picker.pickImage(source: ImageSource.gallery);
+
+                  setState(() {
+                    image = tmpimage;
+                  });
+
+                  print(image?.path);
+                },
+                icon: Icon(Icons.photo)),
+
+            ElevatedButton(
+                onPressed: () {
+                  print("Submit : ${ctrlDate?.text}");
+
+                  // simpan tanggal ini ke server.
+                },
+                child: Text("Submit"))
           ],
         ),
       ),
