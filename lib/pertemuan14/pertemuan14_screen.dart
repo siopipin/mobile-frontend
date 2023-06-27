@@ -122,6 +122,12 @@ class _Pertemuan14ScreenState extends State<Pertemuan14Screen> {
               ],
             ),
 
+            ElevatedButton(
+                onPressed: () {
+                  print("Tanggal Terpilih $_date");
+                },
+                child: Text("Submit")),
+
             if (tglakhir != null)
               ListTile(
                 title: Text('tgl awal: ${tglawal.toString()}'),

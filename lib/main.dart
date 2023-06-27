@@ -40,6 +40,7 @@ import 'package:flutter_application/pertemuan13/pert13_provider.dart';
 import 'package:flutter_application/pertemuan13/pert13_screen.dart';
 import 'package:flutter_application/pertemuan13/pertemuan13_provider.dart';
 import 'package:flutter_application/pertemuan13/pertemuan13_screen.dart';
+import 'package:flutter_application/pertemuan14/pert14.dart';
 import 'package:flutter_application/pertemuan14/pertemuan14_screen.dart';
 
 //Import Minggu M15
@@ -97,7 +98,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
-      home: Pertemuan14Screen(),
+      home: Pert14(),
     );
   }
 }
